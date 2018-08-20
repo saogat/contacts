@@ -94,10 +94,12 @@ class ContactsPage extends Component {
           return this.compareMaps(e.chars, emailCharCount);
       });
       if(found){
-          this.state.duplicateEmails.push(found.email);
-          this.state.duplicateEmails.push(emailCharObj.email);
+          dups.push(found.email);
+          dups.push(emailCharObj.email);
         } 
     }
+    if(dups.length == 0) alert("No email duplicates found!");
+    else this.state.duplicateEmails = dups;
   }
 
 //===================================================
